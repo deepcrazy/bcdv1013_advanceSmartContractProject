@@ -2,11 +2,6 @@ pragma solidity ^0.6.0;
 
 import "./SafeMath.sol";
 
-struct UserProduct {
-    uint8 productId;
-    uint8 discount;
-    uint256 price;
-}
 
 contract FlashSale {
     bytes32 public registeredUsersMerkleRoot; //  Merkle Root of list of registered users
@@ -22,6 +17,12 @@ contract FlashSale {
         uint8 discountOffered,
         uint256 price
     ); //  Event to log the Purchase Details of the product user has purchased.
+
+    struct UserProduct {
+        uint8 productId;
+        uint8 discount;
+        uint256 price;
+    } //  Struct for storing product details and price paid by the user
 
     //  Constructor to be called during deploying
     constructor(

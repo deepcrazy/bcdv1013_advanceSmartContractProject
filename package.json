@@ -14,5 +14,6 @@
   "dependencies": {
     "bignumber.js": "^9.0.0",
     "web3": "^1.2.6"
-  }
+  },
+  "devDependencies": {}
 }

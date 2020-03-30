@@ -39,6 +39,8 @@ _*Note 2: The User can only buy 1 Apple product at discounted price on Flash Sal
   - User will receive the `path (index)` and `list of Witnesses (acts as proof)` during registration by off-chain computation.
 - This will prevent the usage of storage on blockchain and hence makes the smart contract gas efficient.
 
+_Contract: [FlashSale.sol](https://github.com/deepcrazy/bcdv1013_advanceSmartContractProject/blob/master/contracts/FlashSale.sol)_
+
 _Functions implemented_ <br>
 
 1. buyAppleProduct() - Public Function to buy the product
@@ -90,6 +92,8 @@ _List of users used for testing:_
 
 **_Steps for running smart contract on Remix explicilty:_**
 
+_Contracts: [FlashSale.sol](https://github.com/deepcrazy/bcdv1013_advanceSmartContractProject/blob/master/contracts/FlashSale.sol) and [SafeMath.sol](https://github.com/deepcrazy/bcdv1013_advanceSmartContractProject/blob/master/contracts/SafeMath.sol)_
+
 1. Clone the project by running: <br>
    - git clone https://github.com/deepcrazy/bcdv1013_advanceSmartContractProject.git
 2. _Opional Step:_ Add the user's ethereum address apart from the 1st 5 addresses from `ganache-cli -d` as first 1st five addresses are already added into the users registered list and 1st three are already into the existing users list.
@@ -115,6 +119,8 @@ _List of users used for testing:_
 
 **_Steps for Testing using Truffle:_**
 
+_[Test case File for FlashSale.sol](https://github.com/deepcrazy/bcdv1013_advanceSmartContractProject/blob/master/test/test-flashSale.js)_
+
 1.  Clone the project by running: <br>
     - git clone https://github.com/deepcrazy/bcdv1013_advanceSmartContractProject.git
 2.  Run `ganache-cli -d`. <br>
@@ -123,20 +129,24 @@ _List of users used for testing:_
 4.  Run `npm test` for testing the smart contract using truffle.
 
 _Expected Output:_ <br>
-✓ checks 'FlashSale' Contract is deployed<br>
-✓ should check registeredUsersMerkleRoot value<br>
-✓ should check existingUsersMerkleRoot value<br>
-✓ Check the gas estimate of the buyAppleProduct() function (175ms)<br>
-✓ should check buyAppleProduct() function for registered and existing user (94ms)<br>
-✓ should check buyAppleProduct() function for registered but not existing user (91ms)<br>
-✓ Check user should able to buy only 1 product (58ms)<br>
-✓ Verifies product Id while purchasing the product (58ms)<br>
-✓ Check user is not registered for flash sale (47ms)<br>
-✓ Check attacker tries to access registered user account to buy the product (63ms)<br>
-✓ Check gas estimate of existingUsersMerkleRoot() function<br>
-✓ Check gas estimate of registeredUsersMerkleRoot() function<br>
-✓ Check gas estimate of productPrice() function<br>
-✓ Check gas estimate of userProductInfo() function<br>
+
+```
+  Contract: FlashSale
+✓ checks 'FlashSale' Contract is deployed
+✓ should check registeredUsersMerkleRoot value
+✓ should check existingUsersMerkleRoot value
+✓ Check the gas estimate of the buyAppleProduct() function (175ms)
+✓ should check buyAppleProduct() function for registered and existing user (94ms)
+✓ should check buyAppleProduct() function for registered but not existing user (91ms)
+✓ Check user should able to buy only 1 product (58ms)
+✓ Verifies product Id while purchasing the product (58ms)
+✓ Check user is not registered for flash sale (47ms)
+✓ Check attacker tries to access registered user account to buy the product (63ms)
+✓ Check gas estimate of existingUsersMerkleRoot() function
+✓ Check gas estimate of registeredUsersMerkleRoot() function
+✓ Check gas estimate of productPrice() function
+✓ Check gas estimate of userProductInfo() function
+```
 
 ## Future Scope:
 
@@ -146,3 +156,8 @@ _Expected Output:_ <br>
 4. Add the list of more number of products (apart from these 5 already considered) available for shopping by owner.
 5. Buy Apple Services such as 1 Year Accidental Damage Warranty etc.
 6. User can buy more than 1 product, however discount will be applicable on the 1 item and others will be on MRP.
+
+## References
+
+1. [Gas Usage of Ethereum Contracts](https://hackernoon.com/costs-of-a-real-world-ethereum-contract-2033511b3214)
+2. Class Notes, Lectures and labs.

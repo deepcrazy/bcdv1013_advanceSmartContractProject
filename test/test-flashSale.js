@@ -62,7 +62,6 @@ contract("FlashSale", accounts => {
       42,
       "Incorrent address - Length of address mismatch"
     );
-    console.log("Contract Address: " + flashSale_instance.address.toString());
     assert.ok(flashSale_instance.address, "Contract is not deployed..!!");
   });
 
