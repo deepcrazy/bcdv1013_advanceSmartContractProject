@@ -13,13 +13,18 @@ Developed by:
 This project's Idea is based on `Flash Sale` generally held on Black Fridays or any Festive Season. Let's consider `Apple Retailer` as a `Retailer` made the annoucement of the _Flash Sale_ on a particular day `(Let's say: 25th December)` and in the annoucement, they mention that the users who will be registered for the offer before `24th December, 7 PM` will receive _20% OFF_ on MRP of the Apple products. <br>
 _*Note: The users those who are already our existing customers will receive an additional 20% off on all the Apple Products. Therefore, the existing users are eligible for in total of 40% off on the Apple Products.*_
 
-## Approach
+## Approach and Implementation Details
+
+**_Approach:_**
 
 - `Use of Off-chain computation such as merkle trees` as an approach, I have choosen from the options provided and implemented for the project's idea.
 
-**Impementation:** <br>
+**_Impementation:_** <br>
 &ensp;&ensp;&ensp;&ensp; I have implemented the solution for this idea in the following manner. Let's consider the Apple Retailer have the list of the users who have registered for the flash sale `(Lets call these users as registered users)` and Apple Retailer will also have the list of users those who are their existing users`(Lets call these users as existing users)`.
-Now, when the users to any of the Apple store, they will check whether the user is registered or not and if registered, then the user is already a existing user or not. On the basis of the user registered or registered and existing user, he will offered discount and will able to buy the Apple Product. <br> <br>
+Now, when the users to any of the Apple store, they will check whether the user is registered or not and if registered, then the user is already a existing user or not. On the basis of the user registered or registered and existing user, he will offered discount and will able to buy the Apple Product. <br>
+<br>
+*Rest more information about the functions is described with comments in the smart contract itself.*
+<br> <br>
 _Note 1: This implementation doesn't involve transfer of money (ethers) as of now and only will let user know that user has purchased the product with the following product details:_
 
 - _Product Id_
@@ -116,3 +121,12 @@ _List of users used for testing:_
     - `-d` is used so that accounts remain same for running truffle tests. (Mandatory to use `-d` as of now for testing the project.)
 3.  Run `npm install`
 4.  Run `npm test` for testing the smart contract using truffle.
+
+## Future Scope:
+
+1. Transfer of real ethers from buyer to seller is for future scope of the project.
+2. onlyOwner() and onlyUser() functionality is also kept for future scope.
+3. Set Product price explicitly by Owner.
+4. Add the list of more number of products (apart from these 5 already considered) available for shopping by owner.
+5. Buy Apple Services such as 1 Year Accidental Damage Warranty etc.
+6. User can buy more than 1 product, however discount will be applicable on the 1 item and others will be on MRP.
