@@ -23,7 +23,7 @@ _*Note: The users those who are already our existing customers will receive an a
 &ensp;&ensp;&ensp;&ensp; I have implemented the solution for this idea in the following manner. Let's consider the Apple Retailer have the list of the users who have registered for the flash sale `(Lets call these users as registered users)` and Apple Retailer will also have the list of users those who are their existing users`(Lets call these users as existing users)`.
 Now, when the users to any of the Apple store, they will check whether the user is registered or not and if registered, then the user is already a existing user or not. On the basis of the user registered or registered and existing user, he will offered discount and will able to buy the Apple Product. <br>
 <br>
-*Rest more information about the functions is described with comments in the smart contract itself.*
+_Rest more information about the functions is described with comments in the smart contract itself._
 <br> <br>
 _Note 1: This implementation doesn't involve transfer of money (ethers) as of now and only will let user know that user has purchased the product with the following product details:_
 
@@ -121,6 +121,22 @@ _List of users used for testing:_
     - `-d` is used so that accounts remain same for running truffle tests. (Mandatory to use `-d` as of now for testing the project.)
 3.  Run `npm install`
 4.  Run `npm test` for testing the smart contract using truffle.
+
+_Expected Output:_ <br>
+✓ checks 'FlashSale' Contract is deployed<br>
+✓ should check registeredUsersMerkleRoot value<br>
+✓ should check existingUsersMerkleRoot value<br>
+✓ Check the gas estimate of the buyAppleProduct() function (175ms)<br>
+✓ should check buyAppleProduct() function for registered and existing user (94ms)<br>
+✓ should check buyAppleProduct() function for registered but not existing user (91ms)<br>
+✓ Check user should able to buy only 1 product (58ms)<br>
+✓ Verifies product Id while purchasing the product (58ms)<br>
+✓ Check user is not registered for flash sale (47ms)<br>
+✓ Check attacker tries to access registered user account to buy the product (63ms)<br>
+✓ Check gas estimate of existingUsersMerkleRoot() function<br>
+✓ Check gas estimate of registeredUsersMerkleRoot() function<br>
+✓ Check gas estimate of productPrice() function<br>
+✓ Check gas estimate of userProductInfo() function<br>
 
 ## Future Scope:
 
